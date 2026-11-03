@@ -1,0 +1,160 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1120px;
+}
+
+.consoleWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.brandPlate {
+  display: none;
+}
+
+.consoleBody {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.42));
+}
+
+.screen {
+  position: absolute;
+  top: 24%;
+  left: 26%;
+  width: 47.5%;
+  height: 52%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #a9c38c;
+  box-shadow: inset 0 0 34px rgba(20, 32, 15, 0.5), 0 0 0 2px rgba(20, 24, 12, 0.5);
+  container-type: inline-size;
+}
+
+.surface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #a9c38c;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+
+.hint {
+  margin: clamp(10px, 1.4vw, 16px) 0 0;
+  color: rgba(244, 239, 216, 0.52);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(9px, 1vw, 12px);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.hint span {
+  color: rgba(240, 207, 116, 0.82);
+}
+
+.hardwareButton {
+  position: absolute;
+  z-index: 5;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  transition: background 0.1s ease, box-shadow 0.1s ease;
+}
+
+.hardwareButton:active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.buttonGameA {
+  left: 84%;
+  width: 5.5%;
+  height: 6%;
+  top: 11%;
+}
+
+.buttonGameB {
+  top: 22%;
+  left: 84%;
+  width: 5.5%;
+  height: 7%;
+}
+
+.buttonGameRight {
+  top: 63%;
+  left: 85%;
+  width: 6.5%;
+  height: 11%;
+  border-radius: 50%;
+}
+
+.buttonGameLeft {
+  top: 63%;
+  left: 8%;
+  width: 6.5%;
+  height: 11%;
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .game {
+    max-width: 620px;
+  }
+
+  .consoleWrapper {
+    width: 100%;
+    padding: 14px 14px 18px;
+    background: linear-gradient(160deg, #6b3122 0%, #4a2016 52%, #36140f 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -6px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .consoleBody {
+    display: none;
+  }
+
+  .brandPlate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: rgba(244, 239, 216, 0.72);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.42em;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .screen {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 600 / 384;
+    border-radius: 16px;
+    box-shadow: inset 0 0 34px rgba(20, 32, 15, 0.5), 0 0 0 3px #2b100b, 0 0 0 5px rgba(255, 255, 255, 0.08);
+  }
+}

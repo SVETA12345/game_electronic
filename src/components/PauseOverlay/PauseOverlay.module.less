@@ -1,0 +1,181 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2cqw;
+  overflow: hidden;
+  color: #26331f;
+  text-align: center;
+  background: radial-gradient(
+    circle at 50% 22%,
+    rgba(232, 240, 215, 0.97),
+    rgba(169, 195, 140, 0.97) 58%,
+    rgba(143, 172, 114, 0.99)
+  );
+  animation: overlayIn 0.22s ease-out both;
+}
+
+.overlayPause {
+  color: #f4efd8;
+  background: rgba(38, 51, 31, 0.84);
+  backdrop-filter: blur(2px);
+  animation: overlayIn 0.16s ease-out both;
+}
+
+.overlayPause .kicker,
+.overlayPause .keys {
+  color: #f4efd8;
+  opacity: 0.6;
+}
+
+.overlayPause .secondaryButton {
+  color: #f4efd8;
+  background: rgba(244, 239, 216, 0.1);
+  border-color: rgba(244, 239, 216, 0.65);
+  box-shadow: 0 0.55cqw 0 rgba(0, 0, 0, 0.35);
+}
+
+.pauseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.55cqw;
+  width: 100%;
+  max-width: 88%;
+}
+
+.kicker {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: max(6.5px, 1.45cqw);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+
+.resultTitle {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: max(17px, 4.4cqw);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.pauseText {
+  margin: 0;
+  font-size: max(9px, 1.8cqw);
+  opacity: 0.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6cqw;
+}
+
+.primaryButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 0.85cqw;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.15s ease;
+  touch-action: manipulation;
+  padding: 1.25cqw 4cqw;
+  color: #fbf6e4;
+  font-size: max(11px, 2.25cqw);
+  background: linear-gradient(180deg, #d06843, #a8412e);
+  border: max(1px, 0.25cqw) solid #26331f;
+  box-shadow: 0 0.8cqw 0 #6f2c1f, 0 1cqw 1.4cqw rgba(38, 51, 31, 0.28);
+}
+
+.primaryButton:hover {
+  filter: brightness(1.06);
+}
+
+.primaryButton:active {
+  box-shadow: 0 0.25cqw 0 #6f2c1f;
+  transform: translateY(0.55cqw);
+}
+
+.secondaryButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 0.85cqw;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.15s ease;
+  touch-action: manipulation;
+  padding: 1.15cqw 3cqw;
+  color: #26331f;
+  font-size: max(10px, 2cqw);
+  background: rgba(244, 239, 216, 0.55);
+  border: max(1px, 0.25cqw) solid rgba(38, 51, 31, 0.75);
+  box-shadow: 0 0.55cqw 0 rgba(38, 51, 31, 0.4);
+}
+
+.secondaryButton:active {
+  box-shadow: 0 0.15cqw 0 rgba(38, 51, 31, 0.4);
+  transform: translateY(0.4cqw);
+}
+
+.keys {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: max(7px, 1.45cqw);
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@container (max-width: 390px) {
+  .overlay {
+    padding: 8px;
+  }
+
+  .pauseCard {
+    gap: 5px;
+    max-width: 94%;
+  }
+
+  .keys {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    animation: none;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+  }
+}
+
+.resultImage {
+  display: block;
+  width: auto;
+  max-width: 34%;
+  max-height: 16cqw;
+  object-fit: contain;
+  border: max(1px, 0.25cqw) solid rgba(244, 239, 216, 0.45);
+  border-radius: 0.8cqw;
+  box-shadow: 0 0.6cqw 1.4cqw rgba(0, 0, 0, 0.28);
+}

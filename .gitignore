@@ -1,0 +1,26 @@
+# Зависимости
+node_modules/
+
+# Сборка
+dist/
+
+# Логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Кэши
+.eslintcache
+*.tsbuildinfo
+
+# Переменные окружения
+.env
+.env.*
+!.env.example
+
+# Редакторы и ОС
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

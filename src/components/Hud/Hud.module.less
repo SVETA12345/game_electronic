@@ -1,0 +1,106 @@
+.hud {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  padding: 1.25cqw 1.7cqw;
+  color: #26331f;
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(180deg, rgba(194, 214, 166, 0.95), rgba(162, 186, 133, 0.9));
+  border-bottom: 0.35cqw solid rgba(38, 51, 31, 0.28);
+  pointer-events: none;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25cqw;
+  min-width: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: max(7px, 1.5cqw);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  opacity: 0.68;
+}
+
+.statValue {
+  font-size: max(13px, 3.05cqw);
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.lives {
+  display: flex;
+  align-items: center;
+  gap: 0.75cqw;
+  height: max(13px, 3.05cqw);
+}
+
+.lifeEgg {
+  display: block;
+  width: max(8px, 1.85cqw);
+  height: max(11px, 2.5cqw);
+  border: max(1px, 0.2cqw) solid #26331f;
+  border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%;
+}
+
+.lifeEggAlive {
+  background: #f4efd8;
+  box-shadow: inset -1px -1px 0 #d9d2b4;
+}
+
+.lifeEggLost {
+  background: rgba(38, 51, 31, 0.15);
+  border-color: rgba(38, 51, 31, 0.35);
+}
+
+.hudActions {
+  display: flex;
+  gap: 1cqw;
+  margin-left: auto;
+  pointer-events: auto;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max(26px, 5cqw);
+  height: max(26px, 5cqw);
+  padding: 0;
+  color: #26331f;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: max(12px, 2.2cqw);
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f2ecd3, #d6d2b6);
+  border: max(1px, 0.25cqw) solid rgba(38, 51, 31, 0.65);
+  border-radius: 0.8cqw;
+  box-shadow: 0 0.45cqw 0 rgba(38, 51, 31, 0.45);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease;
+}
+
+.iconButton:active:not(:disabled) {
+  box-shadow: 0 0.1cqw 0 rgba(38, 51, 31, 0.45);
+  transform: translateY(0.3cqw);
+}
+
+.iconButton:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconButton {
+    transition: none;
+  }
+}
